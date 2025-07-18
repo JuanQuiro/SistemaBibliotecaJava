@@ -72,7 +72,7 @@ public class TipoUsuarioDAO {
         try {
             ps = cnn.prepareStatement("SELECT * FROM tipo_usuario where idtipousuario!='00'");
             rs = ps.executeQuery();
-            modeloCombo.addElement("Seleccione un Tipo Usuario");
+            modeloCombo.addElement(new Banda("Seleccione un Tipo Usuario",""));
             dc.setModel(modeloCombo);
             while (rs.next()) {
                 modeloCombo.addElement(new Banda(rs.getObject("descr").toString(),rs.getObject("idtipousuario").toString()));

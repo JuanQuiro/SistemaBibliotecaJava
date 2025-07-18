@@ -160,7 +160,7 @@ public class GeneroDAO {
         try {
             ps = cnn.prepareStatement("SELECT * FROM genero");
             rs = ps.executeQuery();
-            modeloCombo.addElement("Seleccione un Genero");
+            modeloCombo.addElement(new Banda("Seleccione un Genero",""));
             dc.setModel(modeloCombo);
             while (rs.next()) {
                 modeloCombo.addElement(new Banda(rs.getObject("descr").toString(),rs.getObject("idgenero").toString()));

@@ -160,7 +160,7 @@ public class AutorDAO {
         try {
             ps = cnn.prepareStatement("SELECT * FROM autor");
             rs = ps.executeQuery();
-            modeloCombo.addElement("Seleccione un Autor");
+            modeloCombo.addElement(new Banda("Seleccione un Autor",""));
             dc.setModel(modeloCombo);
             while (rs.next()) {
                 modeloCombo.addElement(new Banda(rs.getObject("nombre").toString(),rs.getObject("idautor").toString()));

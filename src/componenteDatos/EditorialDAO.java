@@ -160,7 +160,7 @@ public class EditorialDAO {
         try {
             ps = cnn.prepareStatement("SELECT * FROM editorial");
             rs = ps.executeQuery();
-            modeloCombo.addElement("Seleccione un Editorial");
+            modeloCombo.addElement(new Banda("Seleccione un Editorial",""));
             dc.setModel(modeloCombo);
             while (rs.next()) {
                 modeloCombo.addElement(new Banda(rs.getObject("descr").toString(),rs.getObject("ideditorial").toString()));

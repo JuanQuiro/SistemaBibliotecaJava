@@ -160,7 +160,7 @@ public class TipoDocumentoDAO {
         try {
             ps = cnn.prepareStatement("SELECT * FROM tipo_documento where iddocumento!='D00'");
             rs = ps.executeQuery();
-            modeloCombo.addElement("Seleccione un Tipo documento");
+            modeloCombo.addElement(new Banda("Seleccione un Tipo documento", ""));
             dc.setModel(modeloCombo);
             while (rs.next()) {
                 //modeloCombo.addElement(rs.getObject("descr"));

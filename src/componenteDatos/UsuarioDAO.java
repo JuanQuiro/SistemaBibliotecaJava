@@ -269,7 +269,7 @@ public class UsuarioDAO {
         try {
             ps = cnn.prepareStatement("SELECT idcarnet, concat(apepat,' ' ,apemat, ', ', nombres) nombre FROM usuario where idcarnet!='C000000000' and idtipousuario = '01';");
             rs = ps.executeQuery();
-            modeloCombo.addElement("Seleccione una Persona");
+            modeloCombo.addElement(new Banda("Seleccione una Persona", ""));
             dc.setModel(modeloCombo);
             while (rs.next()) {
                 //modeloCombo.addElement(rs.getObject("descr"));
